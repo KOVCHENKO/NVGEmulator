@@ -66,5 +66,5 @@ class EchoFactory(protocol.ClientFactory):
 # connection to a server running on port 9055
 def main():
     f = EchoFactory()
-    reactor.connectTCP("localhost", 8989, f)
+    reactor.connectTCP("localhost", 9000, f)
     reactor.run()
