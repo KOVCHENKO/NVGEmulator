@@ -39,7 +39,6 @@ class EchoClient(protocol.Protocol):
                 self.transport.loseConnection()
 
 
-
     def connectionLost(self, reason):
         print("Connection Lost")
 
@@ -63,8 +62,9 @@ class EchoFactory(protocol.ClientFactory):
         print("Connection lost - goodbye!")
         reactor.stop()
 
-# connection to a server running on port 9055
+# connection to a server running on port 9000
 def main():
+# if __name__ == '__main__':
     f = EchoFactory()
     reactor.connectTCP("localhost", 9000, f)
     reactor.run()
